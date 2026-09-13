@@ -42,7 +42,7 @@ export function FaqSection() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col justify-center py-20 sm:py-28 px-6 sm:px-8 lg:px-12 max-w-5xl mx-auto">
+    <section className="py-16 sm:py-24 lg:py-28 px-6 sm:px-8 lg:px-12 max-w-5xl mx-auto">
       <div className="text-center max-w-2xl mx-auto mb-14">
         <p className="section-tag mb-2">04 / Questions & Answers</p>
         <h2 className="text-3xl sm:text-4xl font-display font-medium tracking-tight text-stone-900 dark:text-stone-100">
