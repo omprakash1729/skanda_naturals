@@ -229,4 +229,4 @@ footer { padding:70px 6vw 28px; background:oklch(.14 .02 130); color:var(--prima
 }
 
 @media (min-width: 1200px) { .story-section,.products-section { padding-left:8vw; padding-right:8vw; }.hero-copy { padding-left:8vw; }.hero-foot { left:8vw; right:8vw; } }
-@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; }.product-image,.hero-action,.contact-section>a { transition:none; }.hero-video { display:none; }.hero-section { background:linear-gradient(color-mix(in oklab,var(--foreground) 44%,transparent),color-mix(in oklab,var(--foreground) 72%,transparent)),url('/__l5e/assets-v1/placeholder/coconut-oil-roots.png') center/cover; } }
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; }.product-image,.hero-action,.contact-section>a { transition:none; }.hero-video { animation:none; } }
