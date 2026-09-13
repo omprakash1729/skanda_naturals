@@ -61,7 +61,7 @@ export function Navbar() {
 
         {/* Desktop Navigation with Smooth Sliding Pill */}
         <nav
-          className="hidden md:grid grid-cols-5 gap-1 p-1.5 rounded-xl bg-stone-950/70 border border-white/15 backdrop-blur-md shadow-inner relative w-[520px]"
+          className="hidden md:grid grid-cols-5 gap-1 p-1.5 rounded-xl bg-stone-950/70 border border-white/15 backdrop-blur-md shadow-inner relative w-[620px]"
           aria-label="Main Navigation"
         >
           {/* Animated Pill */}
@@ -91,7 +91,7 @@ export function Navbar() {
               <Link
                 key={item.to}
                 to={item.to}
-                className={`relative z-10 py-2.5 text-center text-xs font-semibold tracking-wider uppercase transition-colors duration-200 rounded-lg ${
+                className={`relative z-10 py-2.5 px-2 text-center text-xs font-semibold tracking-wider uppercase whitespace-nowrap transition-colors duration-200 rounded-lg ${
                   isActive
                     ? "text-stone-950 font-bold"
                     : "text-stone-300 hover:text-white hover:bg-white/10"
