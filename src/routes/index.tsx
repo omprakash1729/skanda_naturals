@@ -193,12 +193,6 @@ function Index() {
 
         {/* Centered 3D Bottle Showcase Flanked by 2 Points Left & 2 Points Right */}
         <div className="relative rounded-3xl bg-white dark:bg-stone-900/70 border border-stone-200 dark:border-stone-800 shadow-xl p-3.5 sm:p-6 lg:p-8 overflow-hidden">
-          <div className="text-center mb-2">
-            <span className="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-stone-400 dark:text-stone-500">
-              ✦ Drag to rotate 3D bottle
-            </span>
-          </div>
-
           <div className="grid grid-cols-12 gap-1.5 sm:gap-6 items-center">
             {/* Left Column: 2 Feature Points */}
             <div className="col-span-3 sm:col-span-3 space-y-2.5 sm:space-y-6 text-left">
