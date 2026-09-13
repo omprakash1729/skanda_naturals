@@ -22,7 +22,7 @@ export function WhatsAppIcon({ className = "w-4 h-4 fill-current" }: { className
 const navItems = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
-  { label: "Products", to: "/products" },
+  { label: "Our Products", to: "/products" },
   { label: "Blog", to: "/blog" },
   { label: "Contact Us", to: "/contact" },
 ];

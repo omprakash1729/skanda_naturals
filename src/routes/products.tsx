@@ -147,10 +147,10 @@ function ProductCardItem({ product, index }: { product: (typeof fullProducts)[nu
             rel="noreferrer"
           >
             <span className="flex items-center gap-2">
-              <WhatsAppIcon className="w-4 h-4 fill-white text-white transition-transform group-hover:scale-110" />
-              <span>Order on WhatsApp</span>
+              <WhatsAppIcon className="w-4 h-4 fill-stone-950 text-stone-950 transition-transform group-hover:scale-110" />
+              <span>ORDER NOW</span>
             </span>
-            <ArrowRight size={16} aria-hidden="true" className="transition-transform group-hover:translate-x-1" />
+            <ArrowRight size={16} aria-hidden="true" className="transition-transform group-hover:translate-x-1 stroke-[2.5]" />
           </a>
         </div>
       </div>
@@ -195,7 +195,7 @@ function ProductsPage() {
       <section className="py-20 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <h2 className="text-3xl sm:text-4xl font-display font-medium tracking-tight text-stone-900 dark:text-stone-100">
-            Our Cold Pressed Oils
+            Our Products
           </h2>
           <p className="mt-3 text-stone-600 dark:text-stone-400 text-sm sm:text-base">
             Select your preferred bottle size (250 ml, 500 ml, or 1 Litre) and place your order directly through WhatsApp.

@@ -130,10 +130,10 @@ function ProductCard({ oil, index }: { oil: (typeof oils)[number]; index: number
             rel="noreferrer"
           >
             <span className="flex items-center gap-2">
-              <WhatsAppIcon className="w-4 h-4 fill-white text-white transition-transform group-hover:scale-110" />
-              <span>Order on WhatsApp</span>
+              <WhatsAppIcon className="w-4 h-4 fill-stone-950 text-stone-950 transition-transform group-hover:scale-110" />
+              <span>ORDER NOW</span>
             </span>
-            <ArrowRight size={16} aria-hidden="true" className="transition-transform group-hover:translate-x-1" />
+            <ArrowRight size={16} aria-hidden="true" className="transition-transform group-hover:translate-x-1 stroke-[2.5]" />
           </a>
         </div>
       </div>
