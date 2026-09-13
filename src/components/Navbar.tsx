@@ -40,14 +40,18 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isHeroPage = pathname === "/" || pathname === "/products";
+
+  const headerStyle = isHeroPage
+    ? scrolled
+      ? "py-3.5 bg-[#0e1610]/95 backdrop-blur-xl border-b-2 border-lime-400/50 shadow-2xl shadow-black/40"
+      : "py-5 bg-gradient-to-b from-stone-950/90 via-stone-950/40 to-transparent backdrop-blur-[4px] border-b border-white/10"
+    : scrolled
+      ? "py-3.5 bg-[#0e1610]/95 backdrop-blur-xl border-b-2 border-lime-400/50 shadow-2xl shadow-black/40"
+      : "py-3.5 bg-[#0e1610]/95 backdrop-blur-xl border-b border-stone-800/80 shadow-lg shadow-black/20";
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "py-3.5 bg-[#0e1610]/95 backdrop-blur-xl border-b-2 border-lime-400/50 shadow-2xl shadow-black/40"
-          : "py-5 bg-gradient-to-b from-stone-950/90 via-stone-950/40 to-transparent backdrop-blur-[4px] border-b border-white/10"
-      }`}
-    >
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerStyle}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo - White Version */}
         <Link to="/" className="flex items-center gap-2 group">

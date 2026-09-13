@@ -22,9 +22,9 @@ export const Route = createFileRoute("/about")({
 
 function AboutPage() {
   return (
-    <main className="pt-24 bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100 min-h-screen">
+    <main className="pt-20 sm:pt-24 bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100 min-h-screen">
       {/* Editorial Hero Section */}
-      <section className="relative min-h-screen lg:h-screen flex flex-col justify-center py-12 lg:py-0 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto overflow-hidden">
+      <section className="relative py-16 sm:py-24 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto">
         <p className="section-tag mb-4">Pollachi, Tamil Nadu</p>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -78,7 +78,7 @@ function AboutPage() {
       </section>
 
       {/* Core Values Section */}
-      <section className="min-h-screen lg:h-screen flex flex-col justify-center py-12 lg:py-0 px-6 sm:px-8 lg:px-12 bg-stone-100 dark:bg-stone-900/40 border-y border-stone-200 dark:border-stone-800 overflow-hidden">
+      <section className="py-16 sm:py-24 px-6 sm:px-8 lg:px-12 bg-stone-100 dark:bg-stone-900/40 border-y border-stone-200 dark:border-stone-800">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <p className="section-tag mb-2">Our Philosophy</p>

@@ -30,9 +30,9 @@ function ContactPage() {
   };
 
   return (
-    <main className="pt-24 bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100 min-h-screen">
+    <main className="pt-20 sm:pt-24 bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100 min-h-screen">
       {/* Contact Hero Section */}
-      <section className="min-h-screen lg:h-screen flex flex-col justify-center py-12 lg:py-0 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto text-center space-y-4 overflow-hidden">
+      <section className="py-12 sm:py-16 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto text-center space-y-4">
         <p className="section-tag mb-2">Get In Touch</p>
 
         <h1 className="text-4xl sm:text-6xl font-display font-medium tracking-tight text-stone-900 dark:text-stone-100">
