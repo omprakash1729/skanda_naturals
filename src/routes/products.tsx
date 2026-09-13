@@ -172,10 +172,10 @@ function ProductsPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-stone-950/70 via-stone-950/30 to-stone-950/80" />
 
         {/* Minimal & Premium Hero Content inside Sky Portion */}
-        <div className="relative z-10 pt-28 sm:pt-36 px-6 max-w-3xl text-center space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
+        <div className="relative z-10 pt-32 sm:pt-36 px-6 max-w-3xl text-center space-y-3 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <p className="section-tag text-lime-400">02 / The Collection</p>
 
-          <h1 className="text-4xl sm:text-6xl font-display font-medium text-white tracking-tight leading-[1.08] drop-shadow-md">
+          <h1 className="text-3xl sm:text-5xl font-display font-medium text-white tracking-tight leading-[1.08] drop-shadow-md">
             Pure From Soil To Bottle.
           </h1>
 
