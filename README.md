@@ -1,52 +1,72 @@
-# Skanda's Naturals: Pure Cold Press
+# Skanda's Naturals — Wood Cold Pressed Oils 🌿
 
-use the video for hero sectioan ...ineed a better version of website for my cold pressed oils
+Authentic, 100% pure wood cold pressed oils from Pollachi, Tamil Nadu. Founded by **Yuva Priya**, Skanda's Naturals produces traditionally extracted Groundnut, Sesame, and Coconut oils with zero heat, zero additives, and zero chemical processing.
 
-company name and products :Skanda's Naturals 
+---
 
-Wood Cold Pressed oil 
+## 🌟 Key Features
 
-Coconut oil 
+- **Interactive 3D Bottle Viewer**: Real-time 3D product preview using Three.js and GLTF Meshopt decoding.
+- **Pure Cold Pressed Range**:
+  - **Groundnut Oil**: Rich, nutty flavor from selected Pollachi harvest seeds.
+  - **Sesame Oil**: Aromatic gingelly oil extracted with natural jaggery.
+  - **Coconut Oil**: Sun-dried copra oil extracted in traditional Vaagai wood mills.
+- **Direct WhatsApp Ordering**: Seamless size selection (250 ml, 500 ml, 1 Litre) and instant order placement via WhatsApp.
+- **Modern Luxury UI**: Dynamic dark glassmorphic design system built with Tailwind CSS v4 and TanStack Start.
 
-Groundnut Oil 
+---
 
-Sesame oil
+## 🛠️ Technology Stack
 
-i have three version on each 250ml 500 ml and 1 lt
-have the reference image for design idea i have and the components i have attached the logo take the transparent png version and use it and i need proper footer 
+- **Framework**: [TanStack Start](https://tanstack.com/start) / [Vite](https://vitejs.dev/)
+- **UI Library**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) + Custom CSS Design System
+- **3D Graphics**: [Three.js](https://threejs.org/) + GLTFLoader + MeshoptDecoder
+- **Icons**: [Lucide React](https://lucide.dev/)
 
-product liting - should lead to whatsapp with default message of product name and veariant - to 6374392488
+---
 
+## 🚀 Getting Started Locally
 
-for design i have sent you few images where your transition would be seem less from one section to another - have the content in the clear region and be minimal adnd premium 
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm or bun
 
-make it mobile and tab responsive 
+### Installation
 
-i belive in you you takeof teh deisgn part 
+```bash
+# Clone the repository
+git clone https://github.com/omprakash1729/skanda_naturals.git
 
-use the premium font from the bring  fresh growth to agriculture image 
+# Navigate into project directory
+cd skanda_naturals
 
-i have two image reference for website - that is not exactly i want the other components of the wesbite 
+# Install dependencies
+npm install
+```
 
-use the images which  hase the root  cross section as bg and have content place
+### Run Development Server
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/70c5e889-6490-4f41-b6b5-1ebb20e632a3).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+```bash
 npm run dev
 ```
+
+Open [http://localhost:8080](http://localhost:8080) in your browser to see the live application.
+
+### Production Build
+
+```bash
+npm run build
+```
+
+---
+
+## 📍 Contact & Orders
+
+- **Location**: Pollachi, Tamil Nadu, India
+- **WhatsApp**: [+91 63743 92488](https://wa.me/916374392488)
+- **Website**: [Skanda's Naturals](https://skandas-naturals.com)
+
+---
+
+© 2026 Skanda's Naturals. All rights reserved.

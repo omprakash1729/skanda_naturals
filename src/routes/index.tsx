@@ -1,13 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDownRight, ArrowRight, Leaf, Menu, MessageCircle, X } from "lucide-react";
+import { ArrowDownRight, ArrowRight, Leaf, ShieldCheck, Droplet, Sun } from "lucide-react";
 import { useState } from "react";
 
-import coconutAsset from "../assets/coconut-oil-roots.png.asset.json";
-import groundnutAsset from "../assets/groundnut-oil-roots.png.asset.json";
-import heroAsset from "../assets/skandas-hero.mp4.asset.json";
-import logoDarkAsset from "../assets/skandas-logo-dark.png.asset.json";
-import logoLightAsset from "../assets/skandas-logo-light.png.asset.json";
-import sesameAsset from "../assets/sesame-oil-roots.png.asset.json";
+import groundnutImage from "../assets/ChatGPT Image Sep 13, 2026, 04_06_56 PM.png";
+import sesameImage from "../assets/ChatGPT Image Sep 13, 2026, 04_15_14 PM.png";
+import coconutImage from "../assets/ChatGPT Image Sep 13, 2026, 04_16_59 PM.png";
+import heroVideo from "../assets/create_a_video_kind_of_a_doll (online-video-cutter.com).mp4";
+import { Bottle3DViewer } from "../components/Bottle3DViewer";
+import { FaqSection } from "../components/FaqSection";
+import { WhatsAppIcon } from "../components/Navbar";
 
 const PHONE = "916374392488";
 const sizes = ["250 ml", "500 ml", "1 L"];
@@ -15,21 +16,21 @@ const sizes = ["250 ml", "500 ml", "1 L"];
 const oils = [
   {
     name: "Coconut Oil",
-    image: coconutAsset.url,
-    note: "Clean, aromatic and made for everyday South Indian cooking.",
-    origin: "Coconut groves",
+    image: coconutImage,
+    note: "Clean, aromatic, and pressed from fresh Pollachi coconuts for everyday South Indian cooking.",
+    origin: "Pollachi Groves",
   },
   {
     name: "Groundnut Oil",
-    image: groundnutAsset.url,
-    note: "A warm, nutty staple pressed for deep flavour and versatility.",
-    origin: "Groundnut fields",
+    image: groundnutImage,
+    note: "A warm, nutty staple wood-pressed slowly for deep flavour, heat tolerance, and kitchen versatility.",
+    origin: "Harvest Fields",
   },
   {
     name: "Sesame Oil",
-    image: sesameAsset.url,
-    note: "Rich and distinctive, with the character of carefully chosen sesame.",
-    origin: "Sesame harvests",
+    image: sesameImage,
+    note: "Rich, aromatic, and distinctive, retaining authentic character and traditional wellness benefits.",
+    origin: "Selected Seeds",
   },
 ];
 
@@ -43,10 +44,17 @@ function whatsappUrl(product?: string, size?: string) {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Skanda's Naturals | Wood Cold Pressed Oils" },
-      { name: "description", content: "Shop pure wood cold pressed coconut, groundnut and sesame oils from Skanda's Naturals in 250 ml, 500 ml and 1 L sizes." },
-      { property: "og:title", content: "Skanda's Naturals | Wood Cold Pressed Oils" },
-      { property: "og:description", content: "Traditionally crafted coconut, groundnut and sesame oils for your everyday kitchen." },
+      { title: "Skanda's Naturals | Wood Cold Pressed Oils from Pollachi" },
+      {
+        name: "description",
+        content:
+          "Pure wood cold pressed coconut, groundnut and sesame oils crafted in small batches in Pollachi. Available in 250 ml, 500 ml and 1 L sizes.",
+      },
+      { property: "og:title", content: "Skanda's Naturals | Pure Wood Cold Pressed Oils" },
+      {
+        property: "og:description",
+        content: "Traditionally crafted coconut, groundnut and sesame oils from Pollachi for your everyday kitchen.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -56,30 +64,76 @@ export const Route = createFileRoute("/")({
 
 function ProductCard({ oil, index }: { oil: (typeof oils)[number]; index: number }) {
   const [size, setSize] = useState("500 ml");
+  const selectedIndex = sizes.indexOf(size);
+
   return (
-    <article className="product-card">
-      <div className="product-image-wrap">
-        <img src={oil.image} alt={`${oil.name} bottle above its plant roots`} loading="lazy" className="product-image" />
-        <span className="product-number">0{index + 1}</span>
-        <span className="origin-label"><Leaf size={13} aria-hidden="true" /> {oil.origin}</span>
-      </div>
-      <div className="product-copy">
-        <div>
-          <p className="eyebrow">Wood cold pressed</p>
-          <h3>{oil.name}</h3>
-          <p className="product-note">{oil.note}</p>
+    <article className="product-card group flex flex-col justify-between overflow-hidden rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-lg hover:shadow-xl transition-all duration-300">
+      {/* Image Container with Black Gradient Overlay & Layered Title */}
+      <div className="relative aspect-[1.25] w-full overflow-hidden bg-stone-950">
+        <img
+          src={oil.image}
+          alt={`${oil.name} bottle above its plant roots`}
+          loading="lazy"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        
+        {/* Deep Black Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/95 via-stone-950/45 to-transparent" />
+
+        {/* Product Name & Details Layered Over Image */}
+        <div className="absolute bottom-3.5 left-4 right-4 space-y-0.5 text-left">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-lime-400">
+            Wood Cold Pressed
+          </p>
+          <h3 className="text-2xl font-display font-medium text-white tracking-tight drop-shadow-md">
+            {oil.name}
+          </h3>
+          <p className="text-[11px] text-stone-300 line-clamp-1 font-sans font-light">
+            {oil.note}
+          </p>
         </div>
+      </div>
+
+      {/* Size Picker & WhatsApp Order Button */}
+      <div className="p-3.5 sm:p-4 bg-white dark:bg-stone-900">
         <div className="size-area">
-          <span className="size-title">Choose size</span>
-          <div className="size-picker" aria-label={`Choose ${oil.name} size`}>
-            {sizes.map((option) => (
-              <button key={option} type="button" className={size === option ? "size-option active" : "size-option"} onClick={() => setSize(option)} aria-pressed={size === option}>
-                {option}
-              </button>
-            ))}
+          <span className="size-title mb-1.5">Choose size</span>
+          
+          {/* Smooth Sliding Pill Size Picker */}
+          <div className="size-picker-wrap" aria-label={`Choose ${oil.name} size`}>
+            <div
+              className="size-slider-pill"
+              style={{
+                width: "calc((100% - 6px) / 3)",
+                transform: `translateX(${selectedIndex * 100}%)`,
+              }}
+            />
+            <div className="size-picker">
+              {sizes.map((option) => (
+                <button
+                  key={option}
+                  type="button"
+                  className={size === option ? "size-option active" : "size-option"}
+                  onClick={() => setSize(option)}
+                  aria-pressed={size === option}
+                >
+                  {option}
+                </button>
+              ))}
+            </div>
           </div>
-          <a className="order-link" href={whatsappUrl(oil.name, size)} target="_blank" rel="noreferrer">
-            Order on WhatsApp <ArrowRight size={17} aria-hidden="true" />
+
+          <a
+            className="order-link group mt-2.5"
+            href={whatsappUrl(oil.name, size)}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="flex items-center gap-2">
+              <WhatsAppIcon className="w-4 h-4 fill-white text-white transition-transform group-hover:scale-110" />
+              <span>Order on WhatsApp</span>
+            </span>
+            <ArrowRight size={16} aria-hidden="true" className="transition-transform group-hover:translate-x-1" />
           </a>
         </div>
       </div>
@@ -88,85 +142,197 @@ function ProductCard({ oil, index }: { oil: (typeof oils)[number]; index: number
 }
 
 function Index() {
-  const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <main>
-      <header className="site-header">
-        <a href="#top" className="brand-link" aria-label="Skanda's Naturals home">
-          <img src={logoDarkAsset.url} alt="Skanda's Naturals" className="header-logo" />
-        </a>
-        <nav className="desktop-nav" aria-label="Main navigation">
-          <a href="#story">Our story</a><a href="#oils">Our oils</a><a href="#process">Our process</a>
-        </nav>
-        <a className="nav-order" href={whatsappUrl()} target="_blank" rel="noreferrer">Order now <ArrowDownRight size={16} /></a>
-        <button className="menu-button" type="button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation" aria-expanded={menuOpen}>
-          {menuOpen ? <X /> : <Menu />}
-        </button>
-        {menuOpen && <nav className="mobile-nav" aria-label="Mobile navigation"><a onClick={() => setMenuOpen(false)} href="#story">Our story</a><a onClick={() => setMenuOpen(false)} href="#oils">Our oils</a><a onClick={() => setMenuOpen(false)} href="#process">Our process</a><a href={whatsappUrl()} target="_blank" rel="noreferrer">Order on WhatsApp</a></nav>}
-      </header>
-
+    <main className="bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100 overflow-hidden">
+      {/* Hero Section - Scaled to fit 100vh viewport */}
       <section id="top" className="hero-section">
-        <video className="hero-video" autoPlay muted loop playsInline preload="metadata" poster={coconutAsset.url}>
-          <source src={heroAsset.url} type="video/mp4" />
+        <video
+          className="hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={coconutImage}
+        >
+          <source src={heroVideo} type="video/mp4" />
         </video>
         <div className="hero-shade" />
         <div className="hero-copy">
-          <p className="hero-kicker"><span /> Pure by tradition</p>
-          <h1>Rooted in nature.<br />Pressed with patience.</h1>
-          <p>Wood cold pressed oils made with simple ingredients, a slower process, and care you can taste.</p>
-          <a className="hero-action" href="#oils">Explore our oils <ArrowDownRight size={18} /></a>
+          <p className="hero-kicker">
+            <span /> Pure by tradition • Pollachi, Tamil Nadu
+          </p>
+          <h1>
+            Rooted in nature.<br />Pressed with patience.
+          </h1>
+          <p>
+            Wood cold pressed oils made with simple ingredients, slow Vaagai press extraction, and purity you can trust.
+          </p>
+          <a className="hero-action" href="#oils">
+            <span>Explore Collection</span>
+            <ArrowDownRight size={18} />
+          </a>
         </div>
-        <div className="hero-foot"><span>Skanda's Naturals</span><span>Scroll to discover</span></div>
+        <div className="hero-foot">
+          <span>Skanda's Naturals</span>
+          <span>Pure Wood Cold Pressed • Pollachi</span>
+        </div>
       </section>
 
-      <section id="story" className="story-section">
-        <div className="section-tag">01 / Our belief</div>
-        <div className="story-grid">
-          <h2>Good oil begins long before the press.</h2>
-          <div className="story-copy">
-            <p>We keep the process close to its roots—selecting familiar ingredients and pressing them slowly in wood to preserve their natural character.</p>
-            <p>Nothing loud. Nothing overworked. Just honest oils made for real kitchens and everyday food.</p>
+      {/* Section 2: Our Belief & Interactive 3D Bottle Model */}
+      <section id="story" className="min-h-screen lg:h-screen flex flex-col justify-center py-12 lg:py-0 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto overflow-hidden">
+        <p className="section-tag mb-4">01 / Our Craft & Heritage</p>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Left Column: Story Copy & Feature Badges */}
+          <div className="lg:col-span-7 space-y-6">
+            <h2 className="text-3xl sm:text-5xl font-display font-medium tracking-tight leading-[1.08] text-stone-900 dark:text-stone-100">
+              Good oil begins long before the press.
+            </h2>
+            
+            <p className="text-base sm:text-lg text-stone-600 dark:text-stone-300 leading-relaxed max-w-2xl font-sans">
+              Founded by <strong className="text-stone-900 dark:text-stone-100 font-semibold">Yuva Priya</strong> in Pollachi, Tamil Nadu, Skanda's Naturals honors age-old wood cold-press traditions. We source raw ingredients from nearby family groves and crush them slowly using unheated Vaagai wood mortars.
+            </p>
+
+            <p className="text-sm sm:text-base text-stone-500 dark:text-stone-400 leading-relaxed max-w-2xl">
+              Nothing refined. Nothing bleached or chemically altered. Just pure, golden oils crafted for conscious everyday kitchens.
+            </p>
+
+            {/* Design Element Grid Cards */}
+            <div className="grid grid-cols-2 gap-4 pt-4">
+              <div className="p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 shadow-sm flex items-start gap-3">
+                <div className="p-2.5 rounded-lg bg-lime-400/20 text-lime-700 dark:text-lime-400">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">
+                    100% Wood Pressed
+                  </h4>
+                  <p className="text-xs text-stone-500 dark:text-stone-400 mt-0.5">
+                    Unheated Vaagai mortar extraction
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 shadow-sm flex items-start gap-3">
+                <div className="p-2.5 rounded-lg bg-amber-400/20 text-amber-700 dark:text-amber-400">
+                  <Sun className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">
+                    Pollachi Roots
+                  </h4>
+                  <p className="text-xs text-stone-500 dark:text-stone-400 mt-0.5">
+                    Harvested from pristine groves
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 shadow-sm flex items-start gap-3">
+                <div className="p-2.5 rounded-lg bg-emerald-400/20 text-emerald-700 dark:text-emerald-400">
+                  <Droplet className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">
+                    Unrefined Purity
+                  </h4>
+                  <p className="text-xs text-stone-500 dark:text-stone-400 mt-0.5">
+                    No chemical solvents or heat
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 shadow-sm flex items-start gap-3">
+                <div className="p-2.5 rounded-lg bg-sky-400/20 text-sky-700 dark:text-sky-400">
+                  <Leaf className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">
+                    Small Batches
+                  </h4>
+                  <p className="text-xs text-stone-500 dark:text-stone-400 mt-0.5">
+                    Pressed with patience & care
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Floating 3D Bottle Canvas without BG Card Box */}
+          <div className="lg:col-span-5 relative flex items-center justify-center">
+            <Bottle3DViewer modelPath="/bottle-model.glb" className="w-full h-[440px] sm:h-[480px]" />
           </div>
         </div>
-        <div className="principles" aria-label="Our principles">
-          <span>Carefully sourced</span><span>Wood cold pressed</span><span>Made in small batches</span><span>Kitchen essentials</span>
-        </div>
       </section>
 
+      {/* Section 3: The Collection */}
       <section id="oils" className="products-section">
         <div className="products-heading">
-          <div><p className="section-tag">02 / The collection</p><h2>Three oils.<br />One honest process.</h2></div>
-          <p>Choose your everyday essential and order the right size directly through WhatsApp.</p>
+          <div>
+            <p className="section-tag">02 / The Collection</p>
+            <h2>Three oils.<br />One honest process.</h2>
+          </div>
+          <p>
+            Choose your everyday essential oil in 250 ml, 500 ml, or 1 Litre sizes and order directly via WhatsApp.
+          </p>
         </div>
-        <div className="product-list">{oils.map((oil, index) => <ProductCard key={oil.name} oil={oil} index={index} />)}</div>
+        <div className="product-list">
+          {oils.map((oil, index) => (
+            <ProductCard key={oil.name} oil={oil} index={index} />
+          ))}
+        </div>
       </section>
 
+      {/* Section 4: Our Process */}
       <section id="process" className="process-section">
-        <div className="process-image"><img src={sesameAsset.url} alt="Sesame oil and flowering sesame plant with roots beneath the soil" loading="lazy" /></div>
+        <div className="process-image">
+          <img
+            src={sesameImage}
+            alt="Sesame oil and flowering sesame plant with roots beneath the soil"
+            loading="lazy"
+          />
+        </div>
         <div className="process-copy">
-          <p className="section-tag">03 / Our process</p>
+          <p className="section-tag">03 / Our Process</p>
           <h2>From seed to bottle, thoughtfully.</h2>
           <ol>
-            <li><span>01</span><div><h3>Choose well</h3><p>We begin with ingredients selected for their natural aroma and character.</p></div></li>
-            <li><span>02</span><div><h3>Press slowly</h3><p>The traditional wood press takes its time, without rushing the ingredient.</p></div></li>
-            <li><span>03</span><div><h3>Bottle simply</h3><p>The finished oil is packed for the everyday rhythms of your kitchen.</p></div></li>
+            <li>
+              <span>01</span>
+              <div>
+                <h3>Choose well</h3>
+                <p>We select top-grade seeds and coconuts grown in the sun-drenched soils of Pollachi.</p>
+              </div>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <h3>Press slowly</h3>
+                <p>Traditional wood presses (Ghani) extract oil without heat build-up or friction noise.</p>
+              </div>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <h3>Bottle simply</h3>
+                <p>Gravity-settled unrefined oil is filled into recyclable containers ready for your home.</p>
+              </div>
+            </li>
           </ol>
         </div>
       </section>
 
-      <section className="contact-section">
-        <p className="section-tag">From our roots to your table</p>
-        <h2>Bring honest oil<br />into your kitchen.</h2>
-        <a href={whatsappUrl()} target="_blank" rel="noreferrer">Chat with us on WhatsApp <MessageCircle size={20} /></a>
-      </section>
+      {/* Section 5: FAQ Section */}
+      <FaqSection />
 
-      <footer>
-        <div className="footer-main">
-          <div className="footer-brand"><img src={logoLightAsset.url} alt="Skanda's Naturals" /><p>Wood cold pressed oils, made with patience and rooted in everyday goodness.</p></div>
-          <div className="footer-links"><div><h3>Our oils</h3><a href="#oils">Coconut oil</a><a href="#oils">Groundnut oil</a><a href="#oils">Sesame oil</a></div><div><h3>Explore</h3><a href="#story">Our story</a><a href="#process">Our process</a><a href={whatsappUrl()} target="_blank" rel="noreferrer">WhatsApp us</a></div></div>
-        </div>
-        <div className="footer-bottom"><span>© 2026 Skanda's Naturals</span><span>Pure by tradition</span><span>+91 63743 92488</span></div>
-      </footer>
+      {/* Section 6: Contact Banner */}
+      <section className="contact-section">
+        <p className="section-tag">From our roots in Pollachi to your table</p>
+        <h2>Bring honest oil<br />into your kitchen.</h2>
+        <a href={whatsappUrl()} target="_blank" rel="noreferrer">
+          <WhatsAppIcon className="w-5 h-5 fill-white text-white" />
+          <span>Chat with us on WhatsApp</span>
+        </a>
+      </section>
     </main>
   );
 }
