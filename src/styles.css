@@ -343,8 +343,8 @@
 .process-copy { padding:6vw 6vw; display:flex; flex-direction:column; justify-content:center; }
 .process-copy .section-tag { color:var(--accent); }.process-copy>h2 { margin-top:14px; max-width:680px; font-size:clamp(1.8rem, 3.5vw, 3.2rem); line-height:1.08; }
 .process-copy ol { list-style:none; padding:0; margin:24px 0 0; }
-.process-copy li { display:grid; grid-template-columns:40px 1fr; gap:14px; padding:12px 0; border-top:1px solid color-mix(in oklab,var(--primary-foreground) 18%,transparent); }
-.process-copy li>span { color:var(--accent); font-size:11px; }.process-copy li h3 { font-size:16px; font-weight:500; }.process-copy li p { margin-top:3px; color:color-mix(in oklab,var(--primary-foreground) 58%,transparent); font-size:13px; line-height:1.5; }
+.process-copy li { display:grid; grid-template-columns:40px 1fr; gap:14px; align-items:baseline; padding:12px 0; border-top:1px solid color-mix(in oklab,var(--primary-foreground) 18%,transparent); }
+.process-copy li>span { color:var(--accent); font-size:11px; font-weight:600; }.process-copy li h3 { font-size:16px; font-weight:500; }.process-copy li p { margin-top:3px; color:color-mix(in oklab,var(--primary-foreground) 58%,transparent); font-size:13px; line-height:1.5; }
 
 .contact-section { padding:80px 6vw; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:var(--accent); color:var(--accent-foreground); }
 .contact-section .section-tag { color:var(--accent-foreground); }.contact-section h2 { margin-top:18px; font-size:clamp(2rem, 4.5vw, 4rem); }

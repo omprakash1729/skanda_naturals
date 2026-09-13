@@ -74,6 +74,7 @@ function ProductCard({ oil, index }: { oil: (typeof oils)[number]; index: number
           src={oil.image}
           alt={`${oil.name} bottle above its plant roots`}
           loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
         
@@ -289,6 +290,7 @@ function Index() {
             src={sesameImage}
             alt="Sesame oil and flowering sesame plant with roots beneath the soil"
             loading="lazy"
+            decoding="async"
           />
         </div>
         <div className="process-copy">

@@ -39,7 +39,7 @@ export function Footer() {
         <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8 text-left">
           <div>
             <h4 className="text-xs font-bold uppercase tracking-widest text-lime-400 mb-3.5">
-              Our Oils
+              Our Products
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm text-stone-300">
               <li>

@@ -76,6 +76,7 @@ function ProductCardItem({ product, index }: { product: (typeof fullProducts)[nu
             src={product.image}
             alt={`${product.name} bottle above plant roots`}
             loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
 
