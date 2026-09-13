@@ -191,12 +191,12 @@ function Index() {
           </p>
         </div>
 
-        {/* Centered 3D Bottle Showcase Flanked by 2 Points Left & 2 Points Right */}
-        <div className="relative rounded-3xl bg-white dark:bg-stone-900/70 border border-stone-200 dark:border-stone-800 shadow-xl p-3.5 sm:p-6 lg:p-8 overflow-hidden">
+        {/* Centered 3D Bottle Showcase Flanked by 2 Points Left & 2 Points Right (No Outer Container) */}
+        <div className="relative w-full py-4">
           <div className="grid grid-cols-12 gap-1.5 sm:gap-6 items-center">
             {/* Left Column: 2 Feature Points */}
             <div className="col-span-3 sm:col-span-3 space-y-2.5 sm:space-y-6 text-left">
-              <div className="p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-stone-50 dark:bg-stone-800/50 border border-stone-200/80 dark:border-stone-700/60 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-1.5 sm:gap-3 transition-transform hover:scale-102">
+              <div className="p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-1.5 sm:gap-3 transition-transform hover:scale-102">
                 <div className="p-1.5 sm:p-2.5 rounded-lg bg-lime-400/20 text-lime-700 dark:text-lime-400 shrink-0">
                   <ShieldCheck className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                 </div>
@@ -210,7 +210,7 @@ function Index() {
                 </div>
               </div>
 
-              <div className="p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-stone-50 dark:bg-stone-800/50 border border-stone-200/80 dark:border-stone-700/60 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-1.5 sm:gap-3 transition-transform hover:scale-102">
+              <div className="p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-1.5 sm:gap-3 transition-transform hover:scale-102">
                 <div className="p-1.5 sm:p-2.5 rounded-lg bg-amber-400/20 text-amber-700 dark:text-amber-400 shrink-0">
                   <Sun className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                 </div>
@@ -225,14 +225,14 @@ function Index() {
               </div>
             </div>
 
-            {/* Center Column: 3D Bottle Viewer */}
+            {/* Center Column: Floating 3D Bottle Viewer */}
             <div className="col-span-6 sm:col-span-6 relative flex items-center justify-center">
-              <Bottle3DViewer modelPath="/bottle-model.glb" className="w-full h-[240px] xs:h-[280px] sm:h-[360px] lg:h-[440px]" />
+              <Bottle3DViewer modelPath="/bottle-model.glb" className="w-full h-[250px] xs:h-[300px] sm:h-[380px] lg:h-[460px]" />
             </div>
 
             {/* Right Column: 2 Feature Points */}
             <div className="col-span-3 sm:col-span-3 space-y-2.5 sm:space-y-6 text-left">
-              <div className="p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-stone-50 dark:bg-stone-800/50 border border-stone-200/80 dark:border-stone-700/60 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-1.5 sm:gap-3 transition-transform hover:scale-102">
+              <div className="p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-1.5 sm:gap-3 transition-transform hover:scale-102">
                 <div className="p-1.5 sm:p-2.5 rounded-lg bg-emerald-400/20 text-emerald-700 dark:text-emerald-400 shrink-0">
                   <Droplet className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                 </div>
@@ -246,7 +246,7 @@ function Index() {
                 </div>
               </div>
 
-              <div className="p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-stone-50 dark:bg-stone-800/50 border border-stone-200/80 dark:border-stone-700/60 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-1.5 sm:gap-3 transition-transform hover:scale-102">
+              <div className="p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-1.5 sm:gap-3 transition-transform hover:scale-102">
                 <div className="p-1.5 sm:p-2.5 rounded-lg bg-sky-400/20 text-sky-700 dark:text-sky-400 shrink-0">
                   <Leaf className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                 </div>
