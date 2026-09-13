@@ -179,96 +179,93 @@ function Index() {
         </div>
       </section>
 
-      {/* Section 2: Our Belief & Interactive 3D Bottle Model */}
-      <section id="story" className="py-16 sm:py-24 lg:py-28 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto">
-        <p className="section-tag mb-3 sm:mb-4">01 / Our Craft & Heritage</p>
+      {/* Section 2: Our Belief & Interactive Centered 3D Bottle Showcase */}
+      <section id="story" className="py-14 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 max-w-7xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+          <p className="section-tag mb-2">01 / Our Craft & Heritage</p>
+          <h2 className="text-2.5xl xs:text-3xl sm:text-4xl lg:text-5xl font-display font-medium tracking-tight leading-[1.1] text-stone-900 dark:text-stone-100">
+            Good oil begins long before the press.
+          </h2>
+          <p className="mt-3 text-sm sm:text-base text-stone-600 dark:text-stone-300 leading-relaxed font-sans max-w-2xl mx-auto">
+            Founded by <strong className="text-stone-900 dark:text-stone-100 font-semibold">Yuva Priya</strong> in Pollachi, Tamil Nadu, Skanda's Naturals honors age-old wood cold-press traditions. We source raw ingredients from nearby family groves and crush them slowly using unheated Vaagai wood mortars.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-          {/* Left Column: Story Copy & Feature Badges */}
-          <div className="lg:col-span-7 space-y-5 sm:space-y-6">
-            <h2 className="text-2.5xl xs:text-3xl sm:text-4xl lg:text-5xl font-display font-medium tracking-tight leading-[1.1] text-stone-900 dark:text-stone-100">
-              Good oil begins long before the press.
-            </h2>
-            
-            <p className="text-sm sm:text-base lg:text-lg text-stone-600 dark:text-stone-300 leading-relaxed max-w-2xl font-sans">
-              Founded by <strong className="text-stone-900 dark:text-stone-100 font-semibold">Yuva Priya</strong> in Pollachi, Tamil Nadu, Skanda's Naturals honors age-old wood cold-press traditions. We source raw ingredients from nearby family groves and crush them slowly using unheated Vaagai wood mortars.
-            </p>
+        {/* Centered 3D Bottle Showcase Flanked by 2 Points Left & 2 Points Right */}
+        <div className="relative rounded-3xl bg-white dark:bg-stone-900/70 border border-stone-200 dark:border-stone-800 shadow-xl p-3.5 sm:p-6 lg:p-8 overflow-hidden">
+          <div className="text-center mb-2">
+            <span className="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-stone-400 dark:text-stone-500">
+              ✦ Drag to rotate 3D bottle
+            </span>
+          </div>
 
-            <p className="text-xs sm:text-sm lg:text-base text-stone-500 dark:text-stone-400 leading-relaxed max-w-2xl">
-              Nothing refined. Nothing bleached or chemically altered. Just pure, golden oils crafted for conscious everyday kitchens.
-            </p>
-
-            {/* Mobile-only 3D Bottle Showcase (portrait mode) */}
-            <div className="lg:hidden relative flex flex-col items-center justify-center my-4 p-3 bg-white dark:bg-stone-900/60 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-md">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-stone-400 dark:text-stone-500 mb-1">
-                ✦ Drag to rotate 3D bottle
-              </span>
-              <Bottle3DViewer modelPath="/bottle-model.glb" className="w-full h-[260px] xs:h-[300px] sm:h-[360px]" />
-            </div>
-
-            {/* Feature Cards Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-2 sm:pt-4">
-              <div className="p-3.5 sm:p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 shadow-sm flex items-start gap-3">
-                <div className="p-2 sm:p-2.5 rounded-lg bg-lime-400/20 text-lime-700 dark:text-lime-400 shrink-0">
-                  <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" />
+          <div className="grid grid-cols-12 gap-1.5 sm:gap-6 items-center">
+            {/* Left Column: 2 Feature Points */}
+            <div className="col-span-3 sm:col-span-3 space-y-2.5 sm:space-y-6 text-left">
+              <div className="p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-stone-50 dark:bg-stone-800/50 border border-stone-200/80 dark:border-stone-700/60 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-1.5 sm:gap-3 transition-transform hover:scale-102">
+                <div className="p-1.5 sm:p-2.5 rounded-lg bg-lime-400/20 text-lime-700 dark:text-lime-400 shrink-0">
+                  <ShieldCheck className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <h4 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">
+                  <h4 className="text-[9px] xs:text-[10px] sm:text-xs font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100 leading-tight">
                     100% Wood Pressed
                   </h4>
-                  <p className="text-[10px] sm:text-xs text-stone-500 dark:text-stone-400 mt-0.5 leading-tight">
+                  <p className="hidden sm:block text-[10px] text-stone-500 dark:text-stone-400 mt-0.5 leading-tight">
                     Unheated Vaagai mortar extraction
                   </p>
                 </div>
               </div>
 
-              <div className="p-3.5 sm:p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 shadow-sm flex items-start gap-3">
-                <div className="p-2 sm:p-2.5 rounded-lg bg-amber-400/20 text-amber-700 dark:text-amber-400 shrink-0">
-                  <Sun className="w-4 h-4 sm:w-5 sm:h-5" />
+              <div className="p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-stone-50 dark:bg-stone-800/50 border border-stone-200/80 dark:border-stone-700/60 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-1.5 sm:gap-3 transition-transform hover:scale-102">
+                <div className="p-1.5 sm:p-2.5 rounded-lg bg-amber-400/20 text-amber-700 dark:text-amber-400 shrink-0">
+                  <Sun className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <h4 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">
+                  <h4 className="text-[9px] xs:text-[10px] sm:text-xs font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100 leading-tight">
                     Pollachi Roots
                   </h4>
-                  <p className="text-[10px] sm:text-xs text-stone-500 dark:text-stone-400 mt-0.5 leading-tight">
+                  <p className="hidden sm:block text-[10px] text-stone-500 dark:text-stone-400 mt-0.5 leading-tight">
                     Harvested from pristine groves
                   </p>
                 </div>
               </div>
+            </div>
 
-              <div className="p-3.5 sm:p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 shadow-sm flex items-start gap-3">
-                <div className="p-2 sm:p-2.5 rounded-lg bg-emerald-400/20 text-emerald-700 dark:text-emerald-400 shrink-0">
-                  <Droplet className="w-4 h-4 sm:w-5 sm:h-5" />
+            {/* Center Column: 3D Bottle Viewer */}
+            <div className="col-span-6 sm:col-span-6 relative flex items-center justify-center">
+              <Bottle3DViewer modelPath="/bottle-model.glb" className="w-full h-[240px] xs:h-[280px] sm:h-[360px] lg:h-[440px]" />
+            </div>
+
+            {/* Right Column: 2 Feature Points */}
+            <div className="col-span-3 sm:col-span-3 space-y-2.5 sm:space-y-6 text-left">
+              <div className="p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-stone-50 dark:bg-stone-800/50 border border-stone-200/80 dark:border-stone-700/60 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-1.5 sm:gap-3 transition-transform hover:scale-102">
+                <div className="p-1.5 sm:p-2.5 rounded-lg bg-emerald-400/20 text-emerald-700 dark:text-emerald-400 shrink-0">
+                  <Droplet className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <h4 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">
+                  <h4 className="text-[9px] xs:text-[10px] sm:text-xs font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100 leading-tight">
                     Unrefined Purity
                   </h4>
-                  <p className="text-[10px] sm:text-xs text-stone-500 dark:text-stone-400 mt-0.5 leading-tight">
+                  <p className="hidden sm:block text-[10px] text-stone-500 dark:text-stone-400 mt-0.5 leading-tight">
                     No chemical solvents or heat
                   </p>
                 </div>
               </div>
 
-              <div className="p-3.5 sm:p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 shadow-sm flex items-start gap-3">
-                <div className="p-2 sm:p-2.5 rounded-lg bg-sky-400/20 text-sky-700 dark:text-sky-400 shrink-0">
-                  <Leaf className="w-4 h-4 sm:w-5 sm:h-5" />
+              <div className="p-2 sm:p-4 rounded-xl sm:rounded-2xl bg-stone-50 dark:bg-stone-800/50 border border-stone-200/80 dark:border-stone-700/60 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-1.5 sm:gap-3 transition-transform hover:scale-102">
+                <div className="p-1.5 sm:p-2.5 rounded-lg bg-sky-400/20 text-sky-700 dark:text-sky-400 shrink-0">
+                  <Leaf className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <h4 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">
+                  <h4 className="text-[9px] xs:text-[10px] sm:text-xs font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100 leading-tight">
                     Small Batches
                   </h4>
-                  <p className="text-[10px] sm:text-xs text-stone-500 dark:text-stone-400 mt-0.5 leading-tight">
+                  <p className="hidden sm:block text-[10px] text-stone-500 dark:text-stone-400 mt-0.5 leading-tight">
                     Pressed with patience & care
                   </p>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Desktop-only 3D Bottle Canvas */}
-          <div className="hidden lg:flex lg:col-span-5 relative items-center justify-center">
-            <Bottle3DViewer modelPath="/bottle-model.glb" className="w-full h-[460px]" />
           </div>
         </div>
       </section>
